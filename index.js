@@ -204,8 +204,8 @@ app.get('/bookmarks/:iff', function(req, res) {
         }));
     });
 });
-app.listen(3000, function() {
-    console.log('Example app listening on port 3000');
+app.listen(80, function() {
+    console.log('Example app listening on port 80');
 });
 function buildEpisodes(id, req) {
     var contents = [];
