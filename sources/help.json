@@ -1,0 +1,59 @@
+{
+    "rubrics": [
+        {
+            "title": "Les bases",
+            "qAndA": [
+                {
+                    "question": "Qu'est ce qu'Arte VOD ?",
+                    "answer": "C'est un truc. Ceci est une réponse\nsur plusieurs lignes\npour tester"
+                },
+                {
+                    "question": "Dois-je m'abonner au service pour pouvoir utiliser Arte VOD sur Freebox ?",
+                    "answer": "Peut être."
+                },
+                {
+                    "question": "Que contient le catalogue ?",
+                    "answer": "Du contenu. Ceci est une réponse\nsur plusieurs lignes\npour tester\nbla1/3\nbla2/3\nbla3/3"
+                }
+            ]
+        },
+        {
+            "title": "Utilisation de Arte VOD sur Freebox",
+            "qAndA": [
+                {
+                    "question": "Comment fonctionne la facturation sur Arte VOD ?",
+                    "answer": "Avec des sous."
+                },
+                {
+                    "question": "Est-il possible de regarder Arte VOD en haute définition sur Freebox ?",
+                    "answer": "Peut être."
+                },
+                {
+                    "question": "Combien de temps la location est-elle valable ?",
+                    "answer": "C'est écrit, éventuellement."
+                },
+                {
+                    "question": "Ceci est une 4e question ?",
+                    "answer": "Et oui !"
+                }
+            ]
+        },
+        {
+            "title": "Ceci est une 3e rubrique",
+            "qAndA": [
+                {
+                    "question": "Qu'est ce qu'Arte VOD ?",
+                    "answer": "C'est un truc."
+                },
+                {
+                    "question": "Dois-je m'abonner au service pour pouvoir utiliser Arte VOD sur Freebox ?",
+                    "answer": "Peut être."
+                },
+                {
+                    "question": "Que contient le catalogue ?",
+                    "answer": "Du contenu."
+                }
+            ]
+        }
+    ]
+}

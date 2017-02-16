@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "name": "Nouveautés",
+            "url": "/rubrique/0"
+        },
+        {
+            "name": "Cinéma",
+            "url": "/rubrique/1"
+        },
+        {
+            "name": "Documentaire",
+            "url": "/menu/2"
+        },
+        {
+            "name": "Spectacles",
+            "url": "/menu/1"
+        },
+        {
+            "name": "Série",
+            "url": "/rubrique/3"
+        },
+        {
+            "name": "Jeunesse",
+            "url": "/rubrique/4"
+        }
+    ]
+}

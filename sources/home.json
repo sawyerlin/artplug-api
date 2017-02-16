@@ -1,0 +1,31 @@
+{
+    "menuUrl": "/menu",
+    "rubriques": [
+        {
+            "id": "0",
+            "title": "",
+            "sizeType": "medium"
+        },
+        {
+            "id": "1",
+            "title": "Tout plein de films",
+            "sizeType": "small",
+            "moreUrl": "/rubrique/1"
+        },
+        {
+            "id": "2",
+            "title": "A ne pas manquer",
+            "sizeType": "large"
+        },
+        {
+            "id": "3",
+            "title": "Tout plein de série",
+            "sizeType": "small"
+        },
+        {
+            "id": "4",
+            "title": "Promotions du mois",
+            "sizeType": "medium"
+        }
+    ]
+}

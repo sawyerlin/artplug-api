@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "name": "item1",
+            "url": "/rubrique/0"
+        },
+        {
+            "name": "item2",
+            "url": "/rubrique/1"
+        },
+        {
+            "name": "item3",
+            "url": "/menu/2"
+        },
+        {
+            "name": "item4",
+            "url": "/menu/1"
+        },
+        {
+            "name": "item5",
+            "url": "/rubrique/3"
+        },
+        {
+            "name": "item6",
+            "url": "/rubrique/4"
+        }
+    ]
+}
