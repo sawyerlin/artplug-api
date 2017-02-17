@@ -40,9 +40,6 @@ const fs = require('fs'),
               suffix: "e.jpg"
           },
       };
-console.log(process.env);
-var ip = process.env.NODE_IP || '127.0.0.1',
-    port = process.env.NODE_PORT || 8080;
 app.use(bodyParser.json());
 app.use(express.static('sources'));
 app.get('/home', function(req, res) {
@@ -207,8 +204,8 @@ app.get('/bookmarks/:iff', function(req, res) {
         }));
     });
 });
-app.listen(port, ip, function() {
-    console.log('%s: Node server started on %s:%d ...', Date(Date.now()), ip, port);
+app.listen(8080, "0.0.0.0", function() {
+    console.log('%s: Node server started on %s:%d ...', Date(Date.now()), "0.0.0.0", 8080);
 });
 function buildEpisodes(id, req) {
     var contents = [];
