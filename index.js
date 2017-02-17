@@ -41,8 +41,8 @@ const fs = require('fs'),
           },
       };
 console.log(process.env);
-var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
-    port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip = process.env.NODE_IP || '127.0.0.1',
+    port = process.env.NODE_PORT || 8080;
 app.use(bodyParser.json());
 app.use(express.static('sources'));
 app.get('/home', function(req, res) {
