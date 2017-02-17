@@ -192,7 +192,7 @@ app.put('/bookmarks/:iff', function(req, res) {
 });
 app.delete('/bookmarks/:iff', function(req, res) {
     dbClient.removeBookmark(req.params.iff, req.query.id, req.query.creator, function(result) {
-        res.json(success);
+        res.json("success");
     });
 });
 app.get('/bookmarks/:iff', function(req, res) {
