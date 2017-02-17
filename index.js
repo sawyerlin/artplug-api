@@ -191,7 +191,7 @@ app.put('/bookmarks/:iff', function(req, res) {
     });
 });
 app.delete('/bookmarks/:iff', function(req, res) {
-    dbClient.removeBookmark(req.params.iff, req.query.id, req.query.creator, function(result) {
+    dbClient.removeBookmark(+req.params.iff, +req.query.id, req.query.creator, function(result) {
         res.json("success");
     });
 });
@@ -209,7 +209,7 @@ app.get('/bookmarks/:iff', function(req, res) {
         }));
     });
 });
-app.listen(8080, "0.0.0.0", function() {
+app.listen(8080, function() {
     console.log('%s: Node server started on %s:%d ...', Date(Date.now()), "0.0.0.0", 8080);
 });
 function buildEpisodes(id, req) {
