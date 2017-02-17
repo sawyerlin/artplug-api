@@ -12,16 +12,18 @@ exports.insertBookmark = (iff, bookmark, callback) => {
     connect(function(err, db) {
         assert.equal(null, err);
         var bmCollection = db.collection('bookmarks');
-        bmCollection.find({'iff': iff}).toArray(function(err, docs) {
+        bmCollection.find({'iff': iff, id: bookmark.id, creator: bookmark.creator}).toArray(function(err, docs) {
             var existed = false;
             if (docs.length > 0) {
                 docs.forEach(doc => {
                     if (doc.creator === bookmark.creator) {
                         existed = true;
                         bmCollection.updateOne(
-                            {iff: iff, id: bookmark.id},
+                            {iff: iff, id: bookmark.id, creator: bookmark.creator},
                             {$set: bookmark},
                             function(err, result) {
+                                console.log("** the error is");
+                                console.log(err);
                                 callback(bookmark);
                                 db.close();
                             }

@@ -180,7 +180,7 @@ app.get('/help', function(req, res) {
     });
 });
 app.put('/bookmarks/:iff', function(req, res) {
-    dbClient.insertBookmark(req.params.iff, req.body, function(result) {
+    dbClient.insertBookmark(+req.params.iff, req.body, function(result) {
         delete result._id;
         res.json(Object.assign(result, {
             title: "item " + result.id,

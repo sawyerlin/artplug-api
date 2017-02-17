@@ -13,6 +13,8 @@ describe('Bookmarks', function() {
      *        });
      *    });
      *});
+     */
+    /*
      *describe('#### Add 2', function() {
      *    it('bookmark is added', function(done) {
      *        dbClient.insertBookmark(123456, {
@@ -28,17 +30,19 @@ describe('Bookmarks', function() {
      *        });
      *    });
      *});
-     *describe('#### Add 3', function() {
-     *    it('bookmark is added', function(done) {
-     *        dbClient.insertBookmark(123456, {
-     *            id: 3,
-     *            creator: "player",
-     *            timeCode: 51
-     *        }, function(result) {
-     *            done();
-     *        });
-     *    });
-     *});
+     */
+    describe('#### Add 3', function() {
+        it('bookmark is added', function(done) {
+            dbClient.insertBookmark(5073103, {
+                id: 10,
+                creator: "player",
+                timeCode: 51
+            }, function(result) {
+                done();
+            });
+        });
+    });
+    /*
      *describe('**** Get All bookmarks', function() {
      *    it('all bookmarks are got', function(done) {
      *        dbClient.getBookmarks(123456, null, function(result) {
@@ -70,13 +74,15 @@ describe('Bookmarks', function() {
      *    });
      *});
      */
-    describe('$$$$ remove favorite of bookmark 1', function() {
-        it('bookmarks favorite 1 is removed', function(done) {
-            dbClient.removeBookmark(123456, 1, "favorite", function(result) {
-                done();
-            });
-        });
-    });
+    /*
+     *describe('$$$$ remove favorite of bookmark 1', function() {
+     *    it('bookmarks favorite 1 is removed', function(done) {
+     *        dbClient.removeBookmark(123456, 1, "favorite", function(result) {
+     *            done();
+     *        });
+     *    });
+     *});
+     */
     /*
      *describe('$$$$ remove ticket of bookmark 2', function() {
      *    it('bookmark ticket 2 is removed', function(done) {
