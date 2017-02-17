@@ -40,6 +40,8 @@ const fs = require('fs'),
               suffix: "e.jpg"
           },
       };
+var ip = process.env.OPENSHIFT_NODEJS_IP,
+    port = parseInt(process.env.OPENSHIFT_NODEJS_PORT) || 3000;
 app.use(bodyParser.json());
 app.use(express.static('sources'));
 app.get('/home', function(req, res) {
@@ -204,8 +206,8 @@ app.get('/bookmarks/:iff', function(req, res) {
         }));
     });
 });
-app.listen(3000, function() {
-    console.log('Example app listening on port 3000');
+app.listen(port, ip, function() {
+    console.log('%s: Node server started on %s:%d ...', Date(Date.now()), ip, port);
 });
 function buildEpisodes(id, req) {
     var contents = [];
