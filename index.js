@@ -40,8 +40,9 @@ const fs = require('fs'),
               suffix: "e.jpg"
           },
       };
-var ip = process.env.OPENSHIFT_NODEJS_IP,
-    port = parseInt(process.env.OPENSHIFT_NODEJS_PORT) || 3000;
+console.log(process.env);
+var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
+    port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 app.use(bodyParser.json());
 app.use(express.static('sources'));
 app.get('/home', function(req, res) {
