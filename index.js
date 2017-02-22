@@ -101,8 +101,7 @@ app.get('/detail/:type?/:id', function(req, res) {
                 fileName = "collection";
                 break; 
         }
-        //a retirer
-        fileName = "film";
+        //fileName = "serie";
     } else {
         fileName = req.params.type;
     }
