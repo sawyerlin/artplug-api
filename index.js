@@ -235,6 +235,6 @@ function buildContents(id, start, end, suffix, req, isfull) {
 function getHostUrl(req) {
     return req.protocol + "://" + req.headers.host;
 }
-app.listen(8080, function() {
+app.listen(8080, "0.0.0.0", function() {
     console.log('%s: Node server started on %d ...', Date(Date.now()), 8080);
 });
