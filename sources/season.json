@@ -19,18 +19,16 @@
             }]
         }
     ],
-    "medias": [
-    {
-      "version": "sd",
-      "mediaId": "100003",
-      "price": "19,99",
-      "duration": "48"
-    },
-    {
-      "version": "hd",
-      "mediaId": "100004",
-      "price": "22,99",
-      "duration": "48"
+    "rents": {
+        "sd": {
+            "value": "19,99",
+            "duration": "48",
+            "type": "h"
+        },
+        "hd": {
+            "value": "22,99",
+            "duration": "48",
+            "type": "h"
+        }
     }
-    ]
 }

@@ -82,56 +82,12 @@ app.get('/menu/:id*?', function(req, res) {
 app.get('/search/:text*?', function(req, res) {
     res.json(buildContents(1, 1, rubs[1].size, rubs[1].suffix, req, true));
 });
-/*app.get('/detail/:id', function(req, res) {
-    console.log("GET detail v1");
-    var id = req.params.id,
-        isSeason = req.query.isSeason;
-    
-    var fileName = "film";
-
-    switch(Math.floor(Math.random() * (4)) + 1) {
-        case 0:
-            fileName = "film";
-            break;
-        case 1:
-            fileName = "serie";
-            break;
-        case 2:
-            fileName = "season";
-            break;
-        case 4:
-            fileName = "collection";
-            break;    
-    }
-    if (isSeason) {
-        fileName = "season";
-    }
-    fs.readFile('sources/' + fileName + '.json', function(err, data) {
-        if (err) throw err;
-        var jsonData = JSON.parse(data);
-        jsonData.id = id;
-        jsonData.picture = {
-            backgroundImage: getHostUrl(req) + jsonData.picture.backgroundImage,
-            recoBackgroundImage: getHostUrl(req) + jsonData.picture.recoBackgroundImage,
-            image: getHostUrl(req) + jsonData.picture.image
-        };
-        if (jsonData.type === "season") {
-            jsonData.episodes = buildEpisodes(id, req);
-        } else {
-            jsonData.recos = {
-                title: "Vous aimerez peut-être aussi...",
-                contents: buildContents(1, rubs[1].start, rubs[1].end, rubs[1].suffix, req)
-            };
-        }
-        res.json(jsonData);
-    });
-});*/
 app.get('/detail/:type?/:id', function(req, res) {
     var id = req.params.id;
     var fileName = "film";
 
     if(req.params.type === undefined) {
-        switch(Math.floor(Math.random() * (4)) + 1) {
+        switch(Math.floor(Math.random() * 4) + 1) {
             case 0:
                 fileName = "film";
                 break;
@@ -146,9 +102,8 @@ app.get('/detail/:type?/:id', function(req, res) {
                 break; 
         }
         //a retirer
-        //fileName = "serie";
-    }
-    else {
+        fileName = "film";
+    } else {
         fileName = req.params.type;
     }
 
@@ -182,6 +137,7 @@ app.get('/help', function(req, res) {
 app.put('/bookmarks/:iff', function(req, res) {
     dbClient.insertBookmark(+req.params.iff, req.body, function(result) {
         delete result._id;
+        delete result.iff;
         res.json(Object.assign(result, {
             title: "item " + result.id,
             imageUrl: getHostUrl(req) + "/gfx/" + result.id + "z.jpg",
@@ -191,7 +147,7 @@ app.put('/bookmarks/:iff', function(req, res) {
     });
 });
 app.delete('/bookmarks/:iff', function(req, res) {
-    dbClient.removeBookmark(+req.params.iff, +req.query.id, req.query.creator, function(result) {
+    dbClient.removeBookmark(+req.params.iff, req.query.id, req.query.creator, function(result) {
         res.json("success");
     });
 });
@@ -200,6 +156,7 @@ app.get('/bookmarks/:iff', function(req, res) {
     dbClient.getBookmarks(req.params.iff, creator, function(result) {
         res.json(result.map((bookmark, index) => {
             delete bookmark._id;
+            delete bookmark.iff;
             return Object.assign(bookmark, {
                 title: "item " + index,
                 imageUrl: getHostUrl(req) + "/gfx/" + index + "z.jpg",
@@ -208,9 +165,6 @@ app.get('/bookmarks/:iff', function(req, res) {
             });
         }));
     });
-});
-app.listen(8080, function() {
-    console.log('%s: Node server started on %s:%d ...', Date(Date.now()), "0.0.0.0", 8080);
 });
 function buildEpisodes(id, req) {
     var contents = [];
@@ -231,28 +185,22 @@ function buildEpisodes(id, req) {
             },
             title: "itemTitle " + i,
             synopsis: "(Random id: "+ newId +") En 6 captivants épisodes, la saison 1 de Rectify raconte les jours qui suivent la libération de Daniel. Comment se réhabituer à un quotidien fait des projets et d'anticipation, quand on a vécu enfermé, sans espoir ni futur, ni même la sensation des saisons qui passent ? Comment comprendre un monde qui, en 18 ans, s'est métamorphosé ? " + i,
-            medias: [
-            {
-                version: "sd",
-                mediaId: "100000",
-                price: Math.floor(Math.random() * (10)).toString(),
-                duration: "168",   
-                leftTime: {
-                    number: "27",
-                    type: "d"
-                }
-            },
-            {
-                version: "hd",
-                mediaId: "100001",
-                price: Math.floor(Math.random() * (10)).toString(),
-                duration: "168",
-                leftTime: {
-                    number: "30",
+            rents: {
+                sd: {
+                    value: "2,99",
+                    duration: "48",
+                    type: "h"
+                },
+                hd: {
+                    value: "3,99",
+                    duration: "48",
                     type: "h"
                 }
-            }
-            ],
+            },
+            medias: {
+                "sd": "483976780",
+                "hd": "483976777"
+            },
             trailer: {
                 sd: "110000",
                 hd: "110001"
@@ -287,3 +235,6 @@ function buildContents(id, start, end, suffix, req, isfull) {
 function getHostUrl(req) {
     return req.protocol + "://" + req.headers.host;
 }
+app.listen(8080, function() {
+    console.log('%s: Node server started on %d ...', Date(Date.now()), 8080);
+});

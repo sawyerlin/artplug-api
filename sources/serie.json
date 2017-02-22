@@ -86,5 +86,17 @@
                 "value": "1453"
             }]
         }
-    ]
+    ],
+    "rents": {
+        "sd": {
+            "value": "19,99",
+            "duration": "48",
+            "type": "h"
+        },
+        "hd": {
+            "value": "22,99",
+            "duration": "48",
+            "type": "h"
+        }
+    }
 }

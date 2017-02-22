@@ -69,19 +69,21 @@
             }]
         }
     ],
-    "medias": [
-    {
-      "version": "sd",
-      "mediaId": "100000",
-      "price": "2,99",
-      "duration": "48"
+    "rents": {
+        "sd": {
+            "value": "2,99",
+            "duration": "48",
+            "type": "h"
+        },
+        "hd": {
+            "value": "3,99",
+            "duration": "48",
+            "type": "h"
+        }
     },
-    {
-      "version": "hd",
-      "mediaId": "100001",
-      "price": "2,99",
-      "duration": "48"
-    }
-    ],
-    "trailer": 110000
+    "medias": {
+        "sd": "483976780",
+        "hd": "483976777"
+    },
+    "trailer": "110000"
 }
