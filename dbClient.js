@@ -55,7 +55,6 @@ exports.removeBookmark = (iff, id, creator, callback) => {
         if (creator) {
             predicate.creator = creator;
         }
-        console.log(predicate);
         db.collection('bookmarks').deleteOne(predicate, function(err, docs) {
             callback(docs);
             db.close();
