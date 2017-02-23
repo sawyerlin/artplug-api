@@ -101,7 +101,7 @@ app.get('/detail/:type?/:id', function(req, res) {
                 fileName = "collection";
                 break; 
         }
-        //fileName = "serie";
+        fileName = "serie";
     } else {
         fileName = req.params.type;
     }
@@ -117,6 +117,19 @@ app.get('/detail/:type?/:id', function(req, res) {
         };
         if (jsonData.type === "season") {
             jsonData.episodes = buildEpisodes(id, req);
+        } else if (jsonData.type === "integral") {
+            jsonData.seasons = (function() {
+                var results = [];
+                for (var i = 1; i <= 3; i ++) {
+                    var episodes = buildEpisodes(id, req);
+                    results.push({
+                        season: i,
+                        episodeNumber: episodes.length,
+                        episodes: episodes
+                    });
+                }
+                return results;
+            })();
         } else {
             jsonData.recos = {
                 title: "Vous aimerez peut-être aussi...",
@@ -151,8 +164,9 @@ app.delete('/bookmarks/:iff', function(req, res) {
     });
 });
 app.get('/bookmarks/:iff', function(req, res) {
-    var creator = req.query.creator;
-    dbClient.getBookmarks(req.params.iff, creator, function(result) {
+    var creator = req.query.creator,
+        version = req.query.version;
+    dbClient.getBookmarks(req.params.iff, creator, version, function(result) {
         res.json(result.map((bookmark, index) => {
             delete bookmark._id;
             delete bookmark.iff;

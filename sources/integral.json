@@ -8,43 +8,6 @@
         "recoBackgroundImage": "/gfx/serie/bg.png",
         "image": "/gfx/serie/poster.png"
     },
-    "seasons": [
-        {
-            "title": "Saison 1",
-            "episodeNumber": "6",
-            "url": "/detail/season/2_1_1"
-        },
-        {
-            "title": "Saison 2",
-            "episodeNumber": "10",
-            "url": "/detail/season/2_1_2"
-        },
-        {
-            "title": "Saison 3",
-            "episodeNumber": "7",
-            "url": "/detail/season/2_1_3"
-        },
-        {
-            "title": "Saison 4",
-            "episodeNumber": "6",
-            "url": "/detail/season/2_1_4"
-        },
-        {
-            "title": "Saison 5",
-            "episodeNumber": "10",
-            "url": "/detail/season/2_1_5"
-        },
-        {
-            "title": "Saison 6",
-            "episodeNumber": "7",
-            "url": "/detail/season/2_1_6"
-        },
-        {
-            "title": "Saison 7",
-            "episodeNumber": "7",
-            "url": "/detail/season/2_1_7"
-        }
-    ],
     "personalities": [
         {
             "name": "nationalité",
@@ -69,18 +32,16 @@
             }]
         }
     ],
-    "medias": [
-    {
-      "version": "sd",
-      "mediaId": "100000",
-      "price": "29,99",
-      "duration": "48"
-    },
-    {
-      "version": "hd",
-      "mediaId": "100001",
-      "price": "34,99",
-      "duration": "48"
+    "rents": {
+        "sd": {
+            "value": "29.99",
+            "duration": "48",
+            "type": "h"
+        },
+        "hd": {
+            "value": "39.99",
+            "duration": "48",
+            "type": "h"
+        }
     }
-    ]
 }
