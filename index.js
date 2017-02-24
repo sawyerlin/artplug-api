@@ -101,7 +101,7 @@ app.get('/detail/:type?/:id', function(req, res) {
                 fileName = "collection";
                 break; 
         }
-        fileName = "serie";
+        fileName = "collection";
     } else {
         fileName = req.params.type;
     }
@@ -130,7 +130,7 @@ app.get('/detail/:type?/:id', function(req, res) {
                 }
                 return results;
             })();
-        } else {
+        } else if (jsonData.type !== "collection") {
             jsonData.recos = {
                 title: "Vous aimerez peut-être aussi...",
                 contents: buildContents(1, rubs[1].start, rubs[1].end, rubs[1].suffix, req)
@@ -200,24 +200,21 @@ function buildEpisodes(id, req) {
             synopsis: "(Random id: "+ newId +") En 6 captivants épisodes, la saison 1 de Rectify raconte les jours qui suivent la libération de Daniel. Comment se réhabituer à un quotidien fait des projets et d'anticipation, quand on a vécu enfermé, sans espoir ni futur, ni même la sensation des saisons qui passent ? Comment comprendre un monde qui, en 18 ans, s'est métamorphosé ? " + i,
             rents: {
                 sd: {
-                    value: "2,99",
+                    value: 2.99,
                     duration: "48",
                     type: "h"
                 },
                 hd: {
-                    value: "3,99",
+                    value: 3.99,
                     duration: "48",
                     type: "h"
                 }
             },
             medias: {
-                "sd": "483976780",
-                "hd": "483976777"
+                sd: "483976780",
+                hd: "483976777"
             },
-            trailer: {
-                sd: "110000",
-                hd: "110001"
-            }
+            trailer: "110000"
         };
         contents.push(content);
     }

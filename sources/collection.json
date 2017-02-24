@@ -2,18 +2,18 @@
     "id": "410000",
     "type": "collection",
     "title": "Collection Kiyoshi Kurosawa",
-    "medias": [
-    {  
-      "version": "sd",
-      "price": "2,99",
-      "duration": "48"
+    "rents": {
+        "hd": {
+            "value": 2.99,
+            "duration": "48",
+            "type": "h"
+        },
+        "sd": {
+            "value": 3.99,
+            "duration": "48",
+            "type": "h"
+        }
     },
-    {
-      "version": "hd",
-      "price": "2,99",
-      "duration": "48"
-    }
-    ],
     "synopsis": "Une collection exceptionnelle de 3 films du maitre du cinéma d'épouvante japonais:<br><ul><li>Titre 1</li><li>Titre 2</li><li>Titre 3</li></ul>",
     "picture": {
         "backgroundImage": "/gfx/serie/background.png",
@@ -23,8 +23,8 @@
     "content": [
         {
             "id": 410001,
+            "type": "collectionItem",
             "title": "Titre 1",
-            "type": "film",
             "synopsis": "Gros-pois et Petit-point sont de retour! Leurs premières aventures ont déjà enchante de très nombreux enfants. Retrouvez nos deux attachants petits personnages dans leur quotidien débordants de fantaisie, de poésie et de situations toujours aussi cocasses. Gros-pois et Petit-point sont de retour! Leurs premières aventures ont déjà enchante de très nombreux enfants. Retrouvez nos deux attachants petits personnages dans leur quotidien débordants de fantaisie, de poésie et de situations toujours aussi cocasses.",
             "picture": {
                 "backgroundImage": "/gfx/movie/moviebg.png",
@@ -46,12 +46,16 @@
             "duration": "1h15",
             "ranking": 4.5,
             "reviews": 666,
+            "medias": {
+                "sd": "483976780",
+                "hd": "483976777"
+            },
             "trailer": "110000"
         },
         {
             "id": 410002,
+            "type": "collectionItem",
             "title": "Titre 2",
-            "type": "film",
             "synopsis": "1synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis 2synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis",
             "picture": {
                 "backgroundImage": "/gfx/movie/moviebg.png",
@@ -73,12 +77,16 @@
             "duration": "1h10",
             "ranking": 4.5,
             "reviews": 666,
+            "medias": {
+                "sd": "483976780",
+                "hd": "483976777"
+            },
             "trailer": "110001"
         },
         {
             "id": 410003,
+            "type": "collectionItem",
             "title": "Titre 3",
-            "type": "film",
             "synopsis": "Gros-pois et Petit-point sont de retour! Leurs premières aventures ont déjà enchante de très nombreux enfants. Retrouvez nos deux attachants petits personnages dans leur quotidien débordants de fantaisie, de poésie et de situations toujours aussi cocasses.",
             "picture": {
                 "backgroundImage": "/gfx/movie/moviebg.png",
@@ -100,6 +108,10 @@
             "duration": "2h",
             "ranking": 4.5,
             "reviews": 666,
+            "medias": {
+                "sd": "483976780",
+                "hd": "483976777"
+            },
             "trailer": "110002"
         }
     ]
