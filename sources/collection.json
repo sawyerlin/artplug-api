@@ -25,12 +25,8 @@
             "id": 410001,
             "type": "collectionItem",
             "title": "Titre 1",
+            "detailUrl": "/detail/film/1_2",
             "synopsis": "Gros-pois et Petit-point sont de retour! Leurs premières aventures ont déjà enchante de très nombreux enfants. Retrouvez nos deux attachants petits personnages dans leur quotidien débordants de fantaisie, de poésie et de situations toujours aussi cocasses. Gros-pois et Petit-point sont de retour! Leurs premières aventures ont déjà enchante de très nombreux enfants. Retrouvez nos deux attachants petits personnages dans leur quotidien débordants de fantaisie, de poésie et de situations toujours aussi cocasses.",
-            "picture": {
-                "backgroundImage": "/gfx/movie/moviebg.png",
-                "recoBackgroundImage": "/gfx/movie/recobg.png",
-                "image": "../images/vignettes/1v.jpg"
-            },
             "personalities": [
                 {
                     "name": "nationalité",
@@ -56,12 +52,8 @@
             "id": 410002,
             "type": "collectionItem",
             "title": "Titre 2",
+            "detailUrl": "/detail/film/1_3",
             "synopsis": "1synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis 2synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis synopsis",
-            "picture": {
-                "backgroundImage": "/gfx/movie/moviebg.png",
-                "recoBackgroundImage": "/gfx/movie/recobg.png",
-                "image": "../images/vignettes/2v.jpg"
-            },
             "personalities": [
                 {
                     "name": "nationalité",
@@ -87,12 +79,8 @@
             "id": 410003,
             "type": "collectionItem",
             "title": "Titre 3",
+            "detailUrl": "/detail/film/1_4",
             "synopsis": "Gros-pois et Petit-point sont de retour! Leurs premières aventures ont déjà enchante de très nombreux enfants. Retrouvez nos deux attachants petits personnages dans leur quotidien débordants de fantaisie, de poésie et de situations toujours aussi cocasses.",
-            "picture": {
-                "backgroundImage": "/gfx/movie/moviebg.png",
-                "recoBackgroundImage": "/gfx/movie/recobg.png",
-                "image": "../images/vignettes/1z.jpg"
-            },
             "personalities": [
                 {
                     "name": "nationalité",
