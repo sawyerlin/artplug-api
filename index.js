@@ -101,7 +101,7 @@ app.get('/detail/:type?/:id', function(req, res) {
                 fileName = "collection";
                 break; 
         }
-        fileName = "collection";
+        //fileName = "collection";
     } else {
         fileName = req.params.type;
     }
