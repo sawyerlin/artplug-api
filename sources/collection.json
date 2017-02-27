@@ -14,7 +14,7 @@
             "type": "h"
         }
     },
-    "synopsis": "Une collection exceptionnelle de 3 films du maitre du cinéma d'épouvante japonais:<br><ul><li>Titre 1</li><li>Titre 2</li><li>Titre 3</li></ul>",
+    "synopsis": "Une collection exceptionnelle de 3 films du maitre du cinéma d'épouvante japonais : ",
     "picture": {
         "backgroundImage": "/gfx/serie/background.png",
         "recoBackgroundImage": "/gfx/serie/bg.png",
@@ -24,7 +24,7 @@
         {
             "id": 410001,
             "type": "collectionItem",
-            "title": "Titre 1",
+            "title": "CHARISMA",
             "detailUrl": "/detail/film/1_2",
             "picture": {
                 "backgroundImage": "/gfx/movie/moviebg.png",
@@ -56,7 +56,7 @@
         {
             "id": 410002,
             "type": "collectionItem",
-            "title": "Titre 2",
+            "title": "SEANCE",
             "detailUrl": "/detail/film/1_3",
             "picture": {
                 "backgroundImage": "/gfx/movie/moviebg.png",
@@ -88,7 +88,7 @@
         {
             "id": 410003,
             "type": "collectionItem",
-            "title": "Titre 3",
+            "title": "KAIRO",
             "detailUrl": "/detail/film/1_4",
             "picture": {
                 "backgroundImage": "/gfx/movie/moviebg.png",

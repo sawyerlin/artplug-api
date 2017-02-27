@@ -65,6 +65,9 @@ exports.removeBookmark = (iff, id, creator, callback) => {
 exports.getBookmarks = (iff, creator, version, callback) => {
     connect(function(err, db) {
         var predicate = {};
+        if (iff) {
+            predicate.iff = iff;
+        }
         if (creator) {
             predicate.creator = creator;
         }
