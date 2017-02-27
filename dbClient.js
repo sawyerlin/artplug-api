@@ -66,7 +66,7 @@ exports.getBookmarks = (iff, creator, version, callback) => {
     connect(function(err, db) {
         var predicate = {};
         if (iff) {
-            predicate.iff = iff;
+            predicate.iff = +iff;
         }
         if (creator) {
             predicate.creator = creator;
