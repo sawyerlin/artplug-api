@@ -165,9 +165,8 @@ app.delete('/bookmarks/:iff', function(req, res) {
 });
 app.get('/bookmarks/:iff', function(req, res) {
     var creator = req.query.creator,
-        version = req.query.version,
-        type = req.query.type;
-    dbClient.getBookmarks(req.params.iff, creator, version, type, function(result) {
+        version = req.query.version;
+    dbClient.getBookmarks(req.params.iff, creator, version, function(result) {
         res.json(result.map((bookmark, index) => {
             delete bookmark._id;
             delete bookmark.iff;
