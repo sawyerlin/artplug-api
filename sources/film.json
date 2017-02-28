@@ -71,12 +71,12 @@
     ],
     "rents": {
         "sd": {
-            "value": "2,99",
+            "value": 2.99,
             "duration": "48",
             "type": "h"
         },
         "hd": {
-            "value": "3,99",
+            "value": 3.99,
             "duration": "48",
             "type": "h"
         }
