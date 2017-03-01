@@ -84,6 +84,7 @@ app.get('/search/:text*?', function(req, res) {
 });
 app.get('/detail/:type?/:id', function(req, res) {
     var id = req.params.id;
+    var isIntegral = req.query.integral;
     var fileName = "film";
 
     if(req.params.type === undefined) {
@@ -105,11 +106,14 @@ app.get('/detail/:type?/:id', function(req, res) {
     } else {
         fileName = req.params.type;
     }
+    if (isIntegral) {
+      fileName = "integral";
+    }
 
     fs.readFile('sources/' + fileName + '.json', function(err, data) {
         if (err) throw err;
         var jsonData = JSON.parse(data);
-        //jsonData.id = id;
+        jsonData.id = id;
         jsonData.picture = {
             backgroundImage: getHostUrl(req) + jsonData.picture.backgroundImage,
             recoBackgroundImage: getHostUrl(req) + jsonData.picture.recoBackgroundImage,
@@ -243,8 +247,8 @@ function buildContents(id, start, end, suffix, req, isfull) {
     return contents;
 }
 function getHostUrl(req) {
-    return req.protocol + "://" + req.headers.host;
+    return req.protocol + "://" + req.headers.host + "/arte_bouchon_api";
 }
-app.listen(8080, "0.0.0.0", function() {
+app.listen(3000, function() {
     console.log('%s: Node server started on %d ...', Date(Date.now()), 8080);
 });
