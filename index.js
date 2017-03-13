@@ -85,12 +85,12 @@ app.get('/search/:text*?', function(req, res) {
 app.get('/detail/:type?/:id', function(req, res) {
     var id = req.params.id;
     var isIntegral = req.query.integral;
-    var fileName = "film";
+    var fileName = "movie";
 
     if(req.params.type === undefined) {
         switch(Math.floor(Math.random() * 4) + 1) {
             case 0:
-                fileName = "film";
+                fileName = "movie";
                 break;
             case 1:
                 fileName = "serie";
@@ -102,7 +102,7 @@ app.get('/detail/:type?/:id', function(req, res) {
                 fileName = "collection";
                 break; 
         }
-        //fileName = "collection";
+        fileName = "collection";
     } else {
         fileName = req.params.type;
     }
@@ -121,7 +121,7 @@ app.get('/detail/:type?/:id', function(req, res) {
         };
         if (jsonData.type === "season") {
             jsonData.episodes = buildEpisodes(id, req);
-        } else if (jsonData.type === "integral") {
+        } else if (jsonData.type === "serie" && isIntegral) {
             jsonData.seasons = (function() {
                 var results = [];
                 for (var i = 1; i <= 3; i ++) {
@@ -158,7 +158,10 @@ app.put('/bookmarks/:iff', function(req, res) {
             title: "item " + result.id,
             imageUrl: getHostUrl(req) + "/gfx/" + result.id + "z.jpg",
             detailUrl: "/detail/" + result.id + "_" + result.id,
-            backgroundUrl: getHostUrl(req) + "/gfx/videos/background.png"
+            backgroundUrl: getHostUrl(req) + "/gfx/videos/background.png",
+            startDate: new Date(),
+            rating: Math.floor(Math.random() * 100) + 1,
+            note: Math.floor(Math.random() * 10000) + 1
         }));
     });
 });
@@ -178,7 +181,10 @@ app.get('/bookmarks/:iff', function(req, res) {
                 title: "item " + index,
                 imageUrl: getHostUrl(req) + "/gfx/" + index + "z.jpg",
                 detailUrl: "/detail/" + bookmark.id + "_" + index,
-                backgroundUrl: getHostUrl(req) + "/gfx/videos/background.png"
+                backgroundUrl: getHostUrl(req) + "/gfx/videos/background.png",
+                startDate: new Date(),
+                rating: Math.floor(Math.random() * 100) + 1,
+                note: Math.floor(Math.random() * 10000) + 1
             });
         }));
     });
@@ -247,7 +253,8 @@ function buildContents(id, start, end, suffix, req, isfull) {
     return contents;
 }
 function getHostUrl(req) {
-    return req.protocol + "://" + req.headers.host + "/arte_bouchon_api";
+return "";
+    //return req.protocol + "://" + req.headers.host + "/arte_bouchon_api";
 }
 app.listen(3000, function() {
     console.log('%s: Node server started on %d ...', Date(Date.now()), 8080);

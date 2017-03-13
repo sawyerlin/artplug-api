@@ -10,16 +10,19 @@
     "seasons": [
         {
             "title": "Saison 1",
+            "number": 1,
             "episodeNumber": "6",
             "url": "/detail/season/2_1_1"
         },
         {
             "title": "Saison 2",
+            "number": 2,
             "episodeNumber": "10",
             "url": "/detail/season/2_1_2"
         },
         {
             "title": "Saison 3",
+            "number": 3,
             "episodeNumber": "7",
             "url": "/detail/season/2_1_3"
         }
