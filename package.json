@@ -16,7 +16,8 @@
     "express-ws": "^3.0.0",
     "mocha": "^3.2.0",
     "mongodb": "^2.2.24",
-    "websocket": "^1.0.24"
+    "websocket": "^1.0.24",
+    "ws": "^2.2.1"
   },
   "devDependencies": {
     "underscore": "^1.8.3"
