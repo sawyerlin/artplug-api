@@ -276,6 +276,6 @@ function getHostUrl(req) {
 return "";
     //return req.protocol + "://" + req.headers.host + "/arte_bouchon_api";
 }
-app.listen(3000, function() {
+app.listen(8080, function() {
     console.log('%s: Node server started on %d ...', Date(Date.now()), 8080);
 });
