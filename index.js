@@ -40,6 +40,7 @@ const fs = require('fs'),
               suffix: "e.jpg"
           },
       };
+var expressWs = require('express-ws')(app);
 app.use(bodyParser.json());
 app.use(express.static('sources'));
 app.get('/home', function(req, res) {
@@ -187,6 +188,25 @@ app.get('/bookmarks/:iff', function(req, res) {
                 note: Math.floor(Math.random() * 10000) + 1
             });
         }));
+    });
+});
+var aWss = expressWs.getWss('/receive');
+app.ws('/receive', function(ws, req) {
+    /*
+     *ws.on('message', function(msg) {
+     *    aWss.clients.forEach(function(client) {
+     *        client.send(msg);
+     *    });
+     *    console.log(msg);
+     *});
+     */
+});
+app.ws('/sender', function(ws, req) {
+    ws.on('message', function(msg) {
+        aWss.clients.forEach(function(client) {
+            client.send(msg);
+        });
+        console.log(msg);
     });
 });
 function buildEpisodes(id, req) {
